@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3973EE6A1D0BF7F80011C9E3 /* ProjectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */; };
 		3992BB291D0BE8A200850D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992BB281D0BE8A200850D12 /* AppDelegate.swift */; };
-		3992BB2B1D0BE8A200850D12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992BB2A1D0BE8A200850D12 /* ViewController.swift */; };
+		3992BB2B1D0BE8A200850D12 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */; };
 		3992BB2E1D0BE8A200850D12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3992BB2C1D0BE8A200850D12 /* Main.storyboard */; };
 		3992BB301D0BE8A200850D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3992BB2F1D0BE8A200850D12 /* Assets.xcassets */; };
 		3992BB331D0BE8A200850D12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3992BB311D0BE8A200850D12 /* LaunchScreen.storyboard */; };
@@ -25,9 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsManager.swift; sourceTree = "<group>"; };
 		3992BB251D0BE8A200850D12 /* hypers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hypers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3992BB281D0BE8A200850D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3992BB2A1D0BE8A200850D12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
 		3992BB2D1D0BE8A200850D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3992BB2F1D0BE8A200850D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3992BB321D0BE8A200850D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,7 +78,8 @@
 			children = (
 				3992BB4F1D0BE91700850D12 /* libs */,
 				3992BB281D0BE8A200850D12 /* AppDelegate.swift */,
-				3992BB2A1D0BE8A200850D12 /* ViewController.swift */,
+				3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */,
+				3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */,
 				3992BB2C1D0BE8A200850D12 /* Main.storyboard */,
 				3992BB2F1D0BE8A200850D12 /* Assets.xcassets */,
 				3992BB311D0BE8A200850D12 /* LaunchScreen.storyboard */,
@@ -183,10 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3992BB2B1D0BE8A200850D12 /* ViewController.swift in Sources */,
+				3992BB2B1D0BE8A200850D12 /* ProjectsTableViewController.swift in Sources */,
 				39E77DC51D0BED2D005090A1 /* SXTypeProto.swift in Sources */,
 				39E77DC21D0BED2D005090A1 /* SXServer.swift in Sources */,
 				39E77DC11D0BED2D005090A1 /* SXRuntime.swift in Sources */,
+				3973EE6A1D0BF7F80011C9E3 /* ProjectsManager.swift in Sources */,
 				39E77DC31D0BED2D005090A1 /* SXSockaddr.swift in Sources */,
 				39E77DC41D0BED2D005090A1 /* SXSocket.swift in Sources */,
 				39E77DBC1D0BED2D005090A1 /* Enums.swift in Sources */,
@@ -314,6 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrdev.hypers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -328,6 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rrdev.hypers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
