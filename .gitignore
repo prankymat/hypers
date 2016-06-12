@@ -96,3 +96,6 @@ fastlane/test_output
 
 # GitHub API Keys
 keys.plist
+
+# OSX finder
+.DS_Store
