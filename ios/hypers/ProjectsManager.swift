@@ -47,15 +47,23 @@ class Project: NSObject {
     }
 }
 
+protocol ProjectsManagerDelegate {
+    func didUpdateProjects()
+}
+
 class ProjectsManager {
     static let sharedManager = ProjectsManager()
 
-    // !!! Dummy data
-    var projects = [Project(name: "Project 1", githubURL: NSURL(string: "https://google.com")!),
-                    Project(name: "Project 2", githubURL: NSURL(string: "https://google.com")!, filePath: NSURL(string: "file://Documents/somewhere")!)]
+    var delegate: ProjectsManagerDelegate?
 
-    //    var projects = [Project]()  // Replace with this in production
-
+    var projects = [Project]() {
+        didSet {
+            if projects.isEmpty == false {
+                saveProjectsList()
+                delegate?.didUpdateProjects()
+            }
+        }
+    }
 
     var archivePath: String? {
         get {

@@ -8,13 +8,23 @@
 
 import UIKit
 
-class ProjectsTableViewController: UITableViewController {
+class ProjectsTableViewController: UITableViewController, ProjectsManagerDelegate {
 
     var projects = ProjectsManager.sharedManager.projects
+
+    @IBAction func loginGithub(sender: AnyObject) {
+        if GithubManager.sharedManager.isAuthenticated == false {
+            performSegueWithIdentifier("showGithubLogin", sender: nil)
+        }
+    }
+
+    @IBAction func cancelGithubLogin(segue:UIStoryboardSegue) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        ProjectsManager.sharedManager.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +48,19 @@ class ProjectsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showGithubLogin" {
+            let dstVC = segue.destinationViewController as! UINavigationController
+            let loginVC = dstVC.viewControllers[0] as! GithubLoginViewController
+            loginVC.delegate = GithubManager.sharedManager
+        }
+    }
+
+    func didUpdateProjects(indexPaths: [NSIndexPath]) {
+        projects = ProjectsManager.sharedManager.projects
+        tableView.reloadData()
     }
 }
 
