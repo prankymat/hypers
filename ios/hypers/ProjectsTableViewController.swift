@@ -58,7 +58,7 @@ class ProjectsTableViewController: UITableViewController, ProjectsManagerDelegat
         }
     }
 
-    func didUpdateProjects(indexPaths: [NSIndexPath]) {
+    func didUpdateProjects() {
         projects = ProjectsManager.sharedManager.projects
         tableView.reloadData()
     }
