@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectsTableViewController: UITableViewController, ProjectsManagerDelegate {
+class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegate {
 
     var projects = ProjectsManager.sharedManager.projects
 

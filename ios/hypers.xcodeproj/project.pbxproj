@@ -28,6 +28,8 @@
 		39E77DC31D0BED2D005090A1 /* SXSockaddr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DB91D0BED2D005090A1 /* SXSockaddr.swift */; };
 		39E77DC41D0BED2D005090A1 /* SXSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DBA1D0BED2D005090A1 /* SXSocket.swift */; };
 		39E77DC51D0BED2D005090A1 /* SXTypeProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DBB1D0BED2D005090A1 /* SXTypeProto.swift */; };
+		CE7FE3EF1D0E3A2300106BB5 /* YSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE3ED1D0E3A2300106BB5 /* YSTableViewController.swift */; };
+		CE7FE3F01D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE3EE1D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		39E77DB91D0BED2D005090A1 /* SXSockaddr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXSockaddr.swift; sourceTree = "<group>"; };
 		39E77DBA1D0BED2D005090A1 /* SXSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXSocket.swift; sourceTree = "<group>"; };
 		39E77DBB1D0BED2D005090A1 /* SXTypeProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXTypeProto.swift; sourceTree = "<group>"; };
+		CE7FE3ED1D0E3A2300106BB5 /* YSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YSTableViewController.swift; path = libs/YSTableViewController/YSTableViewController.swift; sourceTree = "<group>"; };
+		CE7FE3EE1D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YSTableViewControllerDelegate.swift; path = libs/YSTableViewController/YSTableViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +128,19 @@
 		3992BB4F1D0BE91700850D12 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				CE7FE3EC1D0E3A1700106BB5 /* YSTableView */,
 				3992BB4E1D0BE90D00850D12 /* SpartanX */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		CE7FE3EC1D0E3A1700106BB5 /* YSTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE7FE3ED1D0E3A2300106BB5 /* YSTableViewController.swift */,
+				CE7FE3EE1D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift */,
+			);
+			name = YSTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +225,7 @@
 				39E77DC11D0BED2D005090A1 /* SXRuntime.swift in Sources */,
 				3973EE6A1D0BF7F80011C9E3 /* ProjectsManager.swift in Sources */,
 				39E77DC31D0BED2D005090A1 /* SXSockaddr.swift in Sources */,
+				CE7FE3F01D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift in Sources */,
 				39E77DC41D0BED2D005090A1 /* SXSocket.swift in Sources */,
 				39E77DBC1D0BED2D005090A1 /* Enums.swift in Sources */,
 				39E77DBE1D0BED2D005090A1 /* SXClient.swift in Sources */,
@@ -219,6 +234,7 @@
 				3952B29C1D0C983200831D9A /* GithubOAuthCred.swift in Sources */,
 				39E77DC01D0BED2D005090A1 /* SXQueue.swift in Sources */,
 				39E77DBF1D0BED2D005090A1 /* SXObject.swift in Sources */,
+				CE7FE3EF1D0E3A2300106BB5 /* YSTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
