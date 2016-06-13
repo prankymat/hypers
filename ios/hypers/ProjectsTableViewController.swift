@@ -8,14 +8,21 @@
 
 import UIKit
 
-class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegate {
+class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegate, UIActionSheetDelegate {
 
     var projects = ProjectsManager.sharedManager.projects
 
-    @IBAction func loginGithub(sender: AnyObject) {
-        if GithubManager.sharedManager.isAuthenticated == false {
-            performSegueWithIdentifier("showGithubLogin", sender: nil)
-        }
+    @IBAction func newButtonClicked(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        alertController.addAction(UIAlertAction(title: "Import from GitHub", style: UIAlertActionStyle.Default, handler: { (_) in
+            if GithubManager.sharedManager.isAuthenticated == false {
+                self.performSegueWithIdentifier("showGithubLogin", sender: nil)
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Create a Local Project", style: UIAlertActionStyle.Default, handler: { (_) in
+            print("OKKK!")
+        }))
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
     @IBAction func cancelGithubLogin(segue:UIStoryboardSegue) {

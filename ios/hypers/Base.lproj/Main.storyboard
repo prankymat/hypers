@@ -90,13 +90,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Projects" id="oSb-yx-0qJ">
-                        <barButtonItem key="leftBarButtonItem" title="Login to GitHub" id="a3v-LY-oCR">
-                            <connections>
-                                <action selector="loginGithub:" destination="uqt-sX-UwH" id="eeu-1Z-ZO2"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="8oX-HL-OVv"/>
+                            <barButtonItem systemItem="add" id="8oX-HL-OVv">
+                                <connections>
+                                    <action selector="newButtonClicked:" destination="uqt-sX-UwH" id="HCf-eX-ipJ"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="action" id="TXn-fI-duk"/>
                         </rightBarButtonItems>
                     </navigationItem>
