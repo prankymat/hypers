@@ -7,10 +7,10 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="rqA-Rt-O23">
             <objects>
-                <viewController id="NfF-gD-Yxf" sceneMemberID="viewController">
+                <viewController id="NfF-gD-Yxf" customClass="DetailViewController" customModule="hypers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tKX-rM-O4J"/>
                         <viewControllerLayoutGuide type="bottom" id="3mX-db-f0I"/>
@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="2727" y="722"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Global Split View Controller-->
         <scene sceneID="DTH-ng-fd5">
             <objects>
-                <splitViewController id="zbb-OO-vVR" sceneMemberID="viewController">
+                <splitViewController id="zbb-OO-vVR" customClass="GlobalSplitViewController" customModule="hypers" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="vnl-42-tKF" kind="relationship" relationship="masterViewController" id="79u-gl-tll"/>
                         <segue destination="zz3-1M-hPe" kind="relationship" relationship="detailViewController" id="xeO-Sd-GmJ"/>
