@@ -1,3 +1,6 @@
 [submodule "ios/hypers/libs/spartanx"]
 	path = ios/hypers/libs/spartanx
 	url = https://github.com/michael-yuji/spartanx
+[submodule "ios/hypers/libs/YSTableViewController"]
+	path = ios/hypers/libs/YSTableViewController
+	url = https://github.com/michael-yuji/YSTableViewController

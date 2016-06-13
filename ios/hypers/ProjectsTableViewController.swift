@@ -51,6 +51,8 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
         return projects.count
     }
 
+
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showGithubLogin" {
             let dstVC = segue.destinationViewController as! UINavigationController
