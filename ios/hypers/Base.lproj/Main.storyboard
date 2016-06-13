@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="2727" y="722"/>
         </scene>
-        <!--Global Split View Controller-->
+        <!--Split View Controller-->
         <scene sceneID="DTH-ng-fd5">
             <objects>
-                <splitViewController id="zbb-OO-vVR" customClass="GlobalSplitViewController" customModule="hypers" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="zbb-OO-vVR" sceneMemberID="viewController">
                     <connections>
                         <segue destination="vnl-42-tKF" kind="relationship" relationship="masterViewController" id="79u-gl-tll"/>
                         <segue destination="zz3-1M-hPe" kind="relationship" relationship="detailViewController" id="xeO-Sd-GmJ"/>
