@@ -20,6 +20,7 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
 
     @IBAction func cancelGithubLogin(segue:UIStoryboardSegue) {
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -38,7 +38,6 @@ extension String {
         }
     }
     
-    
     var urlAPIComponents: WebAPIAttribute? {
         guard let pos = self.rangeOfString("://") else {return nil}
         guard let s = self.rangeOfString("?") else {return nil}
