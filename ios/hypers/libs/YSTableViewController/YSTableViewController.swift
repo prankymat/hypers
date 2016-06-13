@@ -27,7 +27,7 @@ class YSTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addKeyboardCommands()
-        self.longPressGesture = UILongPressGestureRecognizer(target: self, action: "longPressRecognized:")
+        self.longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(YSTableViewController.longPressRecognized(_:)))
         self.tableView.addGestureRecognizer(longPressGesture)
     }
     
@@ -56,7 +56,7 @@ class YSTableViewController: UITableViewController {
     
     //MARK:- KeyboardCommands
     private func addKeyboardCommands() {
-        let globalAction: Selector = "keyPressed:"
+        let globalAction: Selector = #selector(YSTableViewController.keyPressed(_:))
         let supportedMoifierFlagsCombinations:[UIKeyModifierFlags] = [[UIKeyModifierFlags.Command], [UIKeyModifierFlags.Shift], [UIKeyModifierFlags.init(rawValue: 0)]]
         let upArrowCmds = newKeyCommands(UIKeyInputUpArrow, forModifierFlagsCombinations: supportedMoifierFlagsCombinations, actionSelector: globalAction)
         let dnArrowCmds = newKeyCommands(UIKeyInputDownArrow, forModifierFlagsCombinations: supportedMoifierFlagsCombinations, actionSelector: globalAction)
