@@ -37,4 +37,5 @@ class GithubLoginViewController: UIViewController, UIWebViewDelegate {
         }
         return true
     }
+
 }
