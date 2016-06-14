@@ -99,9 +99,6 @@
                             <barButtonItem systemItem="action" id="TXn-fI-duk"/>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <connections>
-                        <segue destination="LeL-Ga-Fen" kind="presentation" identifier="showGithubLogin" id="HUG-zT-Yej"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9c8-D7-ygk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,7 +177,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bXU-C6-Voh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LeL-Ga-Fen" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GithubLoginViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="LeL-Ga-Fen" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S79-wB-GXN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
