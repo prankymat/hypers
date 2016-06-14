@@ -8,12 +8,7 @@
 
 import UIKit
 
-protocol GithubLoginCallbackDelegate {
-    func didFinishGithubLogin(success success: Bool, code: String)
-}
-
 class GithubLoginViewController: UIViewController, UIWebViewDelegate {
-    var delegate: GithubLoginCallbackDelegate?
 
     @IBOutlet weak var webview: UIWebView!
     
@@ -32,10 +27,13 @@ class GithubLoginViewController: UIViewController, UIWebViewDelegate {
             if let code = url.params[GithubOAuthSettings.codeKey] {
                 GithubManager.sharedManager.didFinishGithubLogin(success: true, code: code)
                 performSegueWithIdentifier("dismissGithubLoginVC", sender: nil)
+                
             }
             return false
         }
         return true
     }
+    
+    
 
 }

@@ -15,13 +15,22 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
     @IBAction func newButtonClicked(sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alertController.addAction(UIAlertAction(title: "Import from GitHub", style: UIAlertActionStyle.Default, handler: { (_) in
-            if GithubManager.sharedManager.isAuthenticated == false {
-                self.performSegueWithIdentifier("showGithubLogin", sender: nil)
-            }
+//            if GithubManager.sharedManager.isAuthenticated == false {
+//                self.performSegueWithIdentifier("showGithubLogin", sender: nil)
+//            }
+            GithubManager.sharedManager.fetchUserGithubProjects(self, { (success, projects) in
+                print(success, projects)
+            })
         }))
         alertController.addAction(UIAlertAction(title: "Create a Local Project", style: UIAlertActionStyle.Default, handler: { (_) in
             print("OKKK!")
         }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        alertController.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+        alertController.popoverPresentationController?.sourceRect = alertController.view.frame
+        
         presentViewController(alertController, animated: true, completion: nil)
     }
 
@@ -64,7 +73,7 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
         if segue.identifier == "showGithubLogin" {
             let dstVC = segue.destinationViewController as! UINavigationController
             let loginVC = dstVC.viewControllers[0] as! GithubLoginViewController
-            loginVC.delegate = GithubManager.sharedManager
+//            loginVC.delegate = GithubManager.sharedManager
         }
     }
 
