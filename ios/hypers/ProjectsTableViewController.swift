@@ -15,9 +15,6 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
     @IBAction func newButtonClicked(sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alertController.addAction(UIAlertAction(title: "Import from GitHub", style: UIAlertActionStyle.Default, handler: { (_) in
-//            if GithubManager.sharedManager.isAuthenticated == false {
-//                self.performSegueWithIdentifier("showGithubLogin", sender: nil)
-//            }
             GithubManager.sharedManager.fetchUserGithubProjects(self, { (success, projects) in
                 print(success, projects)
             })

@@ -16,6 +16,13 @@ enum GithubManagerError: ErrorType {
 private var accessToken: String?
 
 private class GithubLoginShowModalIfNeedOperation: NSOperation {
+
+    var sender: UIViewController!
+
+    init(sender: UIViewController!) {
+        self.sender = sender
+    }
+
     override func main() {
         if accessToken == nil {
             
@@ -30,7 +37,7 @@ private class GithubLoginShowModalIfNeedOperation: NSOperation {
                 
                 loginVC.modalPresentationStyle = .FormSheet
                 
-                GithubManager.sharedManager.sender.presentViewController(loginVC, animated: true, completion: nil)
+                self.sender.presentViewController(loginVC, animated: true, completion: nil)
                 
             })
             
@@ -114,8 +121,6 @@ private class GithubMakeGithubRequestOperation: NSOperation {
 class GithubManager {
 
     static let sharedManager = GithubManager()
-
-    private var sender: UIViewController!
     
     var isAuthenticated: Bool {
         get {
@@ -124,10 +129,8 @@ class GithubManager {
     }
     
     /* ignore the warning, the _ is prepare for swift 3 */
-    func fetchUserGithubProjects(_ requestFrom: UIViewController, _ callback: (success: Bool, projects: [Project]?)->()) {
-        
-        sender = requestFrom
-        let loginOperation = GithubLoginShowModalIfNeedOperation()
+    func fetchUserGithubProjects(_ requestFrom: UIViewController!, _ callback: (success: Bool, projects: [Project]?)->()) {
+        let loginOperation = GithubLoginShowModalIfNeedOperation(sender: requestFrom)
         let fetchGithubProjects = GithubFetchUserGithubProjectsOperation { (success, projects) in
             callback(success: true, projects: projects)
         }
