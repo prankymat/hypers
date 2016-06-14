@@ -107,7 +107,6 @@ private class GithubMakeGithubRequestOperation: NSOperation {
         request.HTTPMethod = verb
         request.addValue(" token " + accessToken, forHTTPHeaderField: "Authorization")
         NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
-            print("here")
             if error != nil || (response as! NSHTTPURLResponse).statusCode != 200 {
                 self.callback(success: false, data: data)
             } else {
@@ -138,52 +137,6 @@ class GithubManager {
         fetchGithubProjects.addDependency(loginOperation)
         
         NSOperationQueue.init().addOperations([loginOperation, fetchGithubProjects], waitUntilFinished: false )
-    }
-
-    func fetchUserGithubProjects(callback: (projects: [Project]?)->()) throws {
-        try makeGithubRequest("GET", endpoint: "user/repos") { (success, data) in
-            print(success, data)
-            if success, let data = data {
-                var dict: [AnyObject] = Array()
-                do {
-                    dict = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as! [AnyObject]
-                } catch {
-                    print("error")
-                }
-
-                var projects = [Project]()
-                for repo in dict {
-                    let projectJSON = repo as! [String: AnyObject]
-                    let projectName = projectJSON["name"] as! String
-                    let projectURL = projectJSON["url"] as! String
-                    let project = Project(name: projectName, githubURL: NSURL(string: projectURL)!)
-                    projects.append(project)
-                }
-                callback(projects: projects)
-            }
-        }
-    }
-
-    func makeGithubRequest(verb: String, endpoint: String, callback: (success: Bool, data: NSData?)->()) throws {
-        guard let accessToken = accessToken else {
-            throw GithubManagerError.NotAuthed
-        }
-
-        guard let url = NSURL(string: endpoint, relativeToURL: NSURL(string: "https://api.github.com")!) else {
-            fatalError("Endpoint '\(endpoint)' is invalid")
-        }
-
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = verb
-        request.addValue(" token " + accessToken, forHTTPHeaderField: "Authorization")
-        NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
-            print("here")
-            if error != nil || (response as! NSHTTPURLResponse).statusCode != 200 {
-                callback(success: false, data: data)
-            } else {
-                callback(success: true, data: data)
-            }
-        }.resume()
     }
 
     func didFinishGithubLogin(success success: Bool, code: String) {
