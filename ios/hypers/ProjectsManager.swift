@@ -47,20 +47,13 @@ class Project: NSObject {
     }
 }
 
-protocol ProjectsManagerDelegate {
-    func didUpdateProjects()
-}
-
 class ProjectsManager {
     static let sharedManager = ProjectsManager()
-
-    var delegate: ProjectsManagerDelegate?
 
     var projects = [Project]() {
         didSet {
             if projects.isEmpty == false {
                 saveProjectsList()
-                delegate?.didUpdateProjects()
             }
         }
     }

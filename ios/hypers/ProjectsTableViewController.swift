@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegate, UIActionSheetDelegate {
+class ProjectsTableViewController: YSTableViewController, UIActionSheetDelegate {
 
     var projects = ProjectsManager.sharedManager.projects
 
@@ -16,7 +16,12 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         alertController.addAction(UIAlertAction(title: "Import from GitHub", style: UIAlertActionStyle.Default, handler: { (_) in
             GithubManager.sharedManager.fetchUserGithubProjects(self, { (success, projects) in
-                print(success, projects)
+                if let projects = projects where success == true {
+                    ProjectsManager.sharedManager.projects = projects
+                    ProjectsManager.sharedManager.saveProjectsList()
+
+                    self.didUpdateProjects()
+                }
             })
         }))
         alertController.addAction(UIAlertAction(title: "Create a Local Project", style: UIAlertActionStyle.Default, handler: { (_) in
@@ -38,7 +43,6 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        ProjectsManager.sharedManager.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,16 +66,6 @@ class ProjectsTableViewController: YSTableViewController, ProjectsManagerDelegat
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
-    }
-
-
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showGithubLogin" {
-            let dstVC = segue.destinationViewController as! UINavigationController
-            let loginVC = dstVC.viewControllers[0] as! GithubLoginViewController
-//            loginVC.delegate = GithubManager.sharedManager
-        }
     }
 
     func didUpdateProjects() {
