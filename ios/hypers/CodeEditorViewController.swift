@@ -8,9 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class CodeEditorViewController: UIViewController {
+    
     override func viewDidLoad() {
         self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
         self.navigationItem.leftItemsSupplementBackButton = true
+    }
+
+    override func viewDidLayoutSubviews() {
+
     }
 }

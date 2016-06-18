@@ -13,12 +13,13 @@
 		3952B29C1D0C983200831D9A /* GithubOAuthCred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952B29B1D0C983200831D9A /* GithubOAuthCred.swift */; };
 		3952B2A01D0D203E00831D9A /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3952B29F1D0D203E00831D9A /* keys.plist */; };
 		3973EE6A1D0BF7F80011C9E3 /* ProjectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */; };
+		3976FC3E1D14C0FC00491D12 /* SyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976FC3D1D14C0FC00491D12 /* SyntaxHighlighter.swift */; };
 		3992BB291D0BE8A200850D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992BB281D0BE8A200850D12 /* AppDelegate.swift */; };
 		3992BB2B1D0BE8A200850D12 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */; };
 		3992BB2E1D0BE8A200850D12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3992BB2C1D0BE8A200850D12 /* Main.storyboard */; };
 		3992BB301D0BE8A200850D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3992BB2F1D0BE8A200850D12 /* Assets.xcassets */; };
 		3992BB331D0BE8A200850D12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3992BB311D0BE8A200850D12 /* LaunchScreen.storyboard */; };
-		39CB239A1D0E6E620058E62B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CB23991D0E6E620058E62B /* DetailViewController.swift */; };
+		39CB239A1D0E6E620058E62B /* CodeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CB23991D0E6E620058E62B /* CodeEditorViewController.swift */; };
 		39E77DBC1D0BED2D005090A1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DB21D0BED2D005090A1 /* Enums.swift */; };
 		39E77DBD1D0BED2D005090A1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DB31D0BED2D005090A1 /* Helper.swift */; };
 		39E77DBE1D0BED2D005090A1 /* SXClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DB41D0BED2D005090A1 /* SXClient.swift */; };
@@ -40,6 +41,7 @@
 		3952B29B1D0C983200831D9A /* GithubOAuthCred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubOAuthCred.swift; sourceTree = "<group>"; };
 		3952B29F1D0D203E00831D9A /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsManager.swift; sourceTree = "<group>"; };
+		3976FC3D1D14C0FC00491D12 /* SyntaxHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighter.swift; sourceTree = "<group>"; };
 		3992BB251D0BE8A200850D12 /* hypers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hypers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3992BB281D0BE8A200850D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +49,7 @@
 		3992BB2F1D0BE8A200850D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3992BB321D0BE8A200850D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3992BB341D0BE8A200850D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39CB23991D0E6E620058E62B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		39CB23991D0E6E620058E62B /* CodeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeEditorViewController.swift; sourceTree = "<group>"; };
 		39E77DB21D0BED2D005090A1 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		39E77DB31D0BED2D005090A1 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		39E77DB41D0BED2D005090A1 /* SXClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXClient.swift; sourceTree = "<group>"; };
@@ -100,7 +102,8 @@
 				3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */,
 				3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */,
 				3992BB2C1D0BE8A200850D12 /* Main.storyboard */,
-				39CB23991D0E6E620058E62B /* DetailViewController.swift */,
+				39CB23991D0E6E620058E62B /* CodeEditorViewController.swift */,
+				3976FC3D1D14C0FC00491D12 /* SyntaxHighlighter.swift */,
 				3952B2991D0C93FF00831D9A /* NSURL+params.swift */,
 				3992BB2F1D0BE8A200850D12 /* Assets.xcassets */,
 				3992BB311D0BE8A200850D12 /* LaunchScreen.storyboard */,
@@ -224,8 +227,9 @@
 				3992BB2B1D0BE8A200850D12 /* ProjectsTableViewController.swift in Sources */,
 				39E77DC51D0BED2D005090A1 /* SXTypeProto.swift in Sources */,
 				3952B2981D0C80AE00831D9A /* GithubLoginViewController.swift in Sources */,
+				3976FC3E1D14C0FC00491D12 /* SyntaxHighlighter.swift in Sources */,
 				39E77DC21D0BED2D005090A1 /* SXServer.swift in Sources */,
-				39CB239A1D0E6E620058E62B /* DetailViewController.swift in Sources */,
+				39CB239A1D0E6E620058E62B /* CodeEditorViewController.swift in Sources */,
 				39E77DC11D0BED2D005090A1 /* SXRuntime.swift in Sources */,
 				3973EE6A1D0BF7F80011C9E3 /* ProjectsManager.swift in Sources */,
 				39E77DC31D0BED2D005090A1 /* SXSockaddr.swift in Sources */,
