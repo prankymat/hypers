@@ -30,6 +30,7 @@
 		39E77DC31D0BED2D005090A1 /* SXSockaddr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DB91D0BED2D005090A1 /* SXSockaddr.swift */; };
 		39E77DC41D0BED2D005090A1 /* SXSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DBA1D0BED2D005090A1 /* SXSocket.swift */; };
 		39E77DC51D0BED2D005090A1 /* SXTypeProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E77DBB1D0BED2D005090A1 /* SXTypeProto.swift */; };
+		CE48F9B31D16D4940098A13E /* ChangeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48F9B21D16D4940098A13E /* ChangeTracker.swift */; };
 		CE7FE3EF1D0E3A2300106BB5 /* YSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE3ED1D0E3A2300106BB5 /* YSTableViewController.swift */; };
 		CE7FE3F01D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FE3EE1D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		39E77DB91D0BED2D005090A1 /* SXSockaddr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXSockaddr.swift; sourceTree = "<group>"; };
 		39E77DBA1D0BED2D005090A1 /* SXSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXSocket.swift; sourceTree = "<group>"; };
 		39E77DBB1D0BED2D005090A1 /* SXTypeProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SXTypeProto.swift; sourceTree = "<group>"; };
+		CE48F9B21D16D4940098A13E /* ChangeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTracker.swift; sourceTree = "<group>"; };
 		CE7FE3ED1D0E3A2300106BB5 /* YSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YSTableViewController.swift; path = libs/YSTableViewController/YSTableViewController.swift; sourceTree = "<group>"; };
 		CE7FE3EE1D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YSTableViewControllerDelegate.swift; path = libs/YSTableViewController/YSTableViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 		3992BB271D0BE8A200850D12 /* hypers */ = {
 			isa = PBXGroup;
 			children = (
+				CE48F9B21D16D4940098A13E /* ChangeTracker.swift */,
 				3992BB4F1D0BE91700850D12 /* libs */,
 				3992BB281D0BE8A200850D12 /* AppDelegate.swift */,
 				3952B2971D0C80AE00831D9A /* GithubLoginViewController.swift */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE48F9B31D16D4940098A13E /* ChangeTracker.swift in Sources */,
 				3952B29A1D0C93FF00831D9A /* NSURL+params.swift in Sources */,
 				3952B2961D0C74ED00831D9A /* GithubManager.swift in Sources */,
 				3992BB2B1D0BE8A200850D12 /* ProjectsTableViewController.swift in Sources */,
