@@ -69,8 +69,8 @@ struct Line {
     
     var scopeCount: Int = 0
     
-    // For C-like functions, For python, this will be 4 spaces
-    // For html, this will be <anything> to increment and </anything> to decrement
+    /// For C-like functions, For python, this will be 4 spaces
+    /// For html, this will be <anything> to increment and </anything> to decrement
     mutating func countScope() -> Int {
         var i = 0
         for char in self.text.characters {
@@ -84,6 +84,12 @@ struct Line {
         return i
     }
     
+    
+    /// Combine lines back to a whole text
+    ///
+    /// - parameter lines: Lines to combine
+    ///
+    /// - returns: The whole text by combining lines and add linebreaks
     static func combine(lines lines: [Line]) -> String {
         var tmp = ""
         for line in lines {
@@ -97,6 +103,9 @@ struct Line {
     }
 }
 
+
+/// A container for lines in source code that can use for tracking changes and return 
+/// lines that need to update due to the changes
 struct LineContainer: CustomStringConvertible {
     var lines = [Line]()
     var scopeSums = [Int]()
@@ -105,10 +114,20 @@ struct LineContainer: CustomStringConvertible {
         return Line.combine(lines: self.lines)
     }
     
+    
+    /// Calculate how "Deep" is the scope
+    ///
+    /// - parameter index: which line in lines
+    ///
+    /// - returns: return the depth of the scope of the line in index
     func scopeCountSum(atLine index: Int) -> Int {
         return lines.map({$0.scopeCount}).reduce(0) {$0 + $1}
     }
     
+    
+    /// Delete text in range, and update the container
+    ///
+    /// - parameter range: Range to delete
     mutating func didDeletedText(inRange range: NSRange) {
         var i = 0
         var ilength = 0
@@ -147,6 +166,12 @@ struct LineContainer: CustomStringConvertible {
         self.scopeSums[i] = scopeCountSum(atLine: i)
     }
     
+    
+    /// Lines convered in the text range.
+    ///
+    /// - parameter range: The range of the whole Text will change
+    ///
+    /// - returns: return a Range<Int> of line indexes within the range
     func affectedLines(inRange range: NSRange) -> Range<Int> {
 
         var i = 0
@@ -174,6 +199,12 @@ struct LineContainer: CustomStringConvertible {
         return Range(i..<j)
     }
     
+    
+    /// Lines need to reparse due to the changes in range
+    ///
+    /// - parameter range: The range of the whole Text will change
+    ///
+    /// - returns: The lines need to be reparsed.
     func linesToReparseforTextChanged(inRange range: Range<Int>) -> Range<Int> {
         let beginningScope = min(scopeSums[range.lowerBound], scopeSums[range.upperBound - 1])
         
