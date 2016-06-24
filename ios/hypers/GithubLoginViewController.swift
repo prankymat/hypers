@@ -11,10 +11,12 @@ import UIKit
 class GithubLoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webview: UIWebView!
+
+    private let OAuthSettings = (UIApplication.sharedApplication().delegate as! AppDelegate).GHOAuth
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let oauthEndpoint = NSURL(string: "https://github.com/login/oauth/authorize?client_id=" + GithubOAuthSettings.clientID + "&scope=repo")!
+        let oauthEndpoint = NSURL(string: "https://github.com/login/oauth/authorize?client_id=" + OAuthSettings.clientID + "&scope=repo")!
         let request = NSURLRequest(URL: oauthEndpoint)
 
         webview.delegate = self
@@ -22,9 +24,9 @@ class GithubLoginViewController: UIViewController, UIWebViewDelegate {
     }
 
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if let url = request.URL where url.absoluteString.hasPrefix(GithubOAuthSettings.callbackURLPrefix) {
+        if let url = request.URL where url.absoluteString.hasPrefix(OAuthSettings.callbackURLPrefix) {
             // Got oauth code
-            if let code = url.params[GithubOAuthSettings.codeKey] {
+            if let code = url.params[OAuthSettings.codeKey] {
                 GithubManager.sharedManager.didFinishGithubLogin(success: true, code: code)
                 performSegueWithIdentifier("dismissGithubLoginVC", sender: nil)
                 

@@ -120,6 +120,8 @@ private class GithubMakeGithubRequestOperation: NSOperation {
 class GithubManager {
 
     static let sharedManager = GithubManager()
+
+    private let OAuthSettings = (UIApplication.sharedApplication().delegate as! AppDelegate).GHOAuth
     
     var isAuthenticated: Bool {
         get {
@@ -141,8 +143,8 @@ class GithubManager {
 
     func didFinishGithubLogin(success success: Bool, code: String) {
         let accessTokenURL = NSURL(string: "https://github.com/login/oauth/access_token?"
-                                          + "client_id=" + GithubOAuthSettings.clientID + "&"
-                                          + "client_secret=" + GithubOAuthSettings.clientSecret + "&"
+                                          + "client_id=" + OAuthSettings.clientID + "&"
+                                          + "client_secret=" + OAuthSettings.clientSecret + "&"
                                           + "code=" + code)!
 
         let accessTokenRequest = NSMutableURLRequest(URL: accessTokenURL)
