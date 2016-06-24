@@ -13,9 +13,4 @@ internal struct GithubOAuth {
     let clientSecret: String
     let callbackURLPrefix = "https://localhost:4567"
     let codeKey = "code"
-
-    init(clientID: String, clientSecret: String) {
-        self.clientID = clientID
-        self.clientSecret = clientSecret
-    }
 }
