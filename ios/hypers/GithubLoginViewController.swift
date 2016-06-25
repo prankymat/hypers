@@ -12,7 +12,7 @@ class GithubLoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webview: UIWebView!
 
-    private let OAuthSettings = (UIApplication.sharedApplication().delegate as! AppDelegate).GHOAuth
+    private let OAuthSettings = GithubSettings.OAuth
     
     override func viewDidLoad() {
         super.viewDidLoad()

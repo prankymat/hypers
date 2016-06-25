@@ -13,23 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let GHOAuth: GithubOAuth = AppDelegate.getOAuthSettings()
-
-    private static func getOAuthSettings() -> GithubOAuth {
-        func get(key name: String) -> String {
-            var keys: NSDictionary?
-            if let path = NSBundle.mainBundle().pathForResource("keys", ofType: "plist") {
-                keys = NSDictionary(contentsOfFile: path)
-            }
-            if let dict = keys {
-                return dict[name] as! String
-            }
-            return ""
-        }
-
-        return GithubOAuth(clientID: get(key: "client_id"), clientSecret: get(key: "client_secret"))
-    }
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         (window?.rootViewController as? UISplitViewController)?.preferredDisplayMode = .AllVisible

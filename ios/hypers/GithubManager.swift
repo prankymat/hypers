@@ -121,7 +121,7 @@ class GithubManager {
 
     static let sharedManager = GithubManager()
 
-    private let OAuthSettings = (UIApplication.sharedApplication().delegate as! AppDelegate).GHOAuth
+    private let OAuthSettings = GithubSettings.OAuth
     
     var isAuthenticated: Bool {
         get {
