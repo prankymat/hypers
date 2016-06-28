@@ -153,7 +153,7 @@ class GithubManager {
         NSURLSession.sharedSession().dataTaskWithRequest(accessTokenRequest) { (data, _, _) in
             if let data = data {
                 let responseString = String(data: data, encoding: NSUTF8StringEncoding)!
-                accessToken = responseString.URLStringParams["access_token"]
+                accessToken = responseString.urlAPIComponents?["access_token"] ?? ""
             }
         }.resume()
     }
