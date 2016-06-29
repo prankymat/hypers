@@ -28,21 +28,23 @@ class Project: NSObject {
         self.filePath = filePath
     }
 
-    private let nameKey = "name"
-    private let filePathKey = "filePath"
-    private let githubURLKey = "githubURL"
+    private enum ProjectKeys: String {
+        case name = "name"
+        case filePath = "filePath"
+        case githubURLKey = "githubURL"
+    }
 
     required init?(coder aDecoder: NSCoder) {  // may return nil when constructing
-        name = aDecoder.decodeObjectForKey(nameKey) as! String
-        githubURL = aDecoder.decodeObjectForKey(githubURLKey) as! NSURL
-        filePath = aDecoder.decodeObjectForKey(filePathKey) as? NSURL
+        name = aDecoder.decodeObjectForKey(ProjectKeys.name.rawValue) as! String
+        githubURL = aDecoder.decodeObjectForKey(ProjectKeys.githubURLKey.rawValue) as! NSURL
+        filePath = aDecoder.decodeObjectForKey(ProjectKeys.filePath.rawValue) as? NSURL
     }
 
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: nameKey)
-        aCoder.encodeObject(githubURL, forKey: githubURLKey)
+        aCoder.encodeObject(name, forKey: ProjectKeys.name.rawValue)
+        aCoder.encodeObject(githubURL, forKey: ProjectKeys.githubURLKey.rawValue)
         if let filePath = filePath {
-            aCoder.encodeObject(filePath, forKey: filePathKey)
+            aCoder.encodeObject(filePath, forKey: ProjectKeys.filePath.rawValue)
         }
     }
 }
@@ -58,7 +60,7 @@ class ProjectsManager {
         }
     }
 
-    var archivePath: String? {
+    private var archivePath: String? {
         get {
             let directoryList = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
 
@@ -71,7 +73,7 @@ class ProjectsManager {
         }
     }
 
-    func saveProjectsList() {
+    private func saveProjectsList() {
         guard let theArchivePath = archivePath else {
             assertionFailure("unable to find archivePath")
             return

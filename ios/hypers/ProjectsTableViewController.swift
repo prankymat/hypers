@@ -18,14 +18,12 @@ class ProjectsTableViewController: YSTableViewController, UIActionSheetDelegate 
             GithubManager.sharedManager.fetchUserGithubProjects(self, { (success, projects) in
                 if let projects = projects where success == true {
                     ProjectsManager.sharedManager.projects = projects
-                    ProjectsManager.sharedManager.saveProjectsList()
-
                     self.didUpdateProjects()
                 }
             })
         }))
         alertController.addAction(UIAlertAction(title: "Create a Local Project", style: UIAlertActionStyle.Default, handler: { (_) in
-            print("OKKK!")
+            fatalError("Not implemented!")
         }))
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
