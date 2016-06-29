@@ -31,7 +31,7 @@ class NSURLParamsTests: XCTestCase {
 
     func testSingularParamWithValidKey() {
         self.setupSubject(singular: true)
-        XCTAssert(subject.params["key1"] == "a", "Got \(subject.params["key1"]) but expecting a")
+        XCTAssertEqual(subject.params["key1"], "a", "Got \(subject.params["key1"]) but expecting a")
     }
 
     func testSingularParamWithInvalidKey() {
@@ -41,7 +41,7 @@ class NSURLParamsTests: XCTestCase {
 
     func testMultipleParamsWithValidKey() {
         self.setupSubject(singular: false)
-        XCTAssert(subject.params["key2"] == "b", "Got \(subject.params["key2"]) but expecting b")
+        XCTAssertEqual(subject.params["key2"], "b", "Got \(subject.params["key2"]) but expecting b")
     }
 
     func testMultipleParamsWithInvalidKey() {

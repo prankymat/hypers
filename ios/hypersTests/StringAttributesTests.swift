@@ -32,7 +32,7 @@ class StringAttributesTests: XCTestCase {
     func testSingularParamWithValidKey() {
         self.setupSubject(singular: true)
         let result = subject.urlAPIComponents!["key1"]
-        XCTAssert(result == "a", "Got \(result) but expecting a")
+        XCTAssertEqual(result, "a", "Got \(result) but expecting a")
     }
 
     func testSingularParamWithInvalidKey() {
@@ -44,7 +44,7 @@ class StringAttributesTests: XCTestCase {
     func testMultipleParamsWithValidKey() {
         self.setupSubject(singular: false)
         let result = subject.urlAPIComponents!["key2"]
-        XCTAssert(result == "b", "Got \(result) but expecting b")
+        XCTAssertEqual(result, "b", "Got \(result) but expecting b")
     }
 
     func testMultipleParamsWithInvalidKey() {
