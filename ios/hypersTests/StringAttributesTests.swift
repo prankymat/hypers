@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import hypers
+
 class StringAttributesTests: XCTestCase {
     var subject = String()
 

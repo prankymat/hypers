@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import hypers
+
 class NSURLParamsTests: XCTestCase {
     var subject = NSURL()
 
