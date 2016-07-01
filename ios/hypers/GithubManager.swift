@@ -17,9 +17,9 @@ private var accessToken: String?
 
 private class GithubLoginShowModalIfNeedOperation: NSOperation {
 
-    var sender: UIViewController!
+    var sender: UIViewController
 
-    init(sender: UIViewController!) {
+    init(sender: UIViewController) {
         self.sender = sender
     }
 

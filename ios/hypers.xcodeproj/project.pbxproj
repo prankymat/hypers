@@ -119,7 +119,6 @@
 		3992BB271D0BE8A200850D12 /* hypers */ = {
 			isa = PBXGroup;
 			children = (
-				CE48F9B21D16D4940098A13E /* ChangeTracker.swift */,
 				3992BB4F1D0BE91700850D12 /* libs */,
 				3992BB281D0BE8A200850D12 /* AppDelegate.swift */,
 				3952B2971D0C80AE00831D9A /* GithubLoginViewController.swift */,
@@ -127,11 +126,12 @@
 				3952B2951D0C74ED00831D9A /* GithubManager.swift */,
 				3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */,
 				3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */,
-				3992BB2C1D0BE8A200850D12 /* Main.storyboard */,
 				39CB23991D0E6E620058E62B /* CodeEditorViewController.swift */,
+				CE48F9B21D16D4940098A13E /* ChangeTracker.swift */,
 				3952B2991D0C93FF00831D9A /* NSURL+params.swift */,
 				3992BB2F1D0BE8A200850D12 /* Assets.xcassets */,
 				3992BB311D0BE8A200850D12 /* LaunchScreen.storyboard */,
+				3992BB2C1D0BE8A200850D12 /* Main.storyboard */,
 				3992BB341D0BE8A200850D12 /* Info.plist */,
 				3952B29F1D0D203E00831D9A /* keys.plist */,
 			);

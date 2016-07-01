@@ -31,4 +31,3 @@ struct GithubOAuth {
     let callbackURLPrefix = "https://localhost:4567"
     let codeKey = "code"
 }
-
