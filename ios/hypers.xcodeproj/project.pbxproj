@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39515FF51D2884D300B09A23 /* NSURL+params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39515FF41D2884D300B09A23 /* NSURL+params.swift */; };
 		3952B2961D0C74ED00831D9A /* GithubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952B2951D0C74ED00831D9A /* GithubManager.swift */; };
 		3952B2981D0C80AE00831D9A /* GithubLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952B2971D0C80AE00831D9A /* GithubLoginViewController.swift */; };
-		3952B29A1D0C93FF00831D9A /* NSURL+params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952B2991D0C93FF00831D9A /* NSURL+params.swift */; };
 		3952B29C1D0C983200831D9A /* GithubOAuthCred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952B29B1D0C983200831D9A /* GithubOAuthCred.swift */; };
 		3952B2A01D0D203E00831D9A /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3952B29F1D0D203E00831D9A /* keys.plist */; };
 		3973EE6A1D0BF7F80011C9E3 /* ProjectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */; };
@@ -46,10 +46,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3942F55B1D2882DA00F73567 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		39515FF41D2884D300B09A23 /* NSURL+params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+params.swift"; sourceTree = "<group>"; };
 		3952B2951D0C74ED00831D9A /* GithubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubManager.swift; sourceTree = "<group>"; };
 		3952B2971D0C80AE00831D9A /* GithubLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubLoginViewController.swift; sourceTree = "<group>"; };
-		3952B2991D0C93FF00831D9A /* NSURL+params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+params.swift"; sourceTree = "<group>"; };
 		3952B29B1D0C983200831D9A /* GithubOAuthCred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubOAuthCred.swift; sourceTree = "<group>"; };
 		3952B29F1D0D203E00831D9A /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		396A1E211D2327C60013D062 /* NSURLParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURLParamsTests.swift; sourceTree = "<group>"; };
@@ -98,6 +111,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3938B5941D28864600CD7DFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		39515FF61D2884E400B09A23 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CE48F9B21D16D4940098A13E /* ChangeTracker.swift */,
+				39515FF41D2884D300B09A23 /* NSURL+params.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		39515FF71D28851800B09A23 /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				3952B2971D0C80AE00831D9A /* GithubLoginViewController.swift */,
+				3952B29B1D0C983200831D9A /* GithubOAuthCred.swift */,
+				3952B2951D0C74ED00831D9A /* GithubManager.swift */,
+			);
+			name = Github;
+			sourceTree = "<group>";
+		};
 		3992BB1C1D0BE8A200850D12 = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +161,11 @@
 			children = (
 				3992BB4F1D0BE91700850D12 /* libs */,
 				3992BB281D0BE8A200850D12 /* AppDelegate.swift */,
-				3952B2971D0C80AE00831D9A /* GithubLoginViewController.swift */,
-				3952B29B1D0C983200831D9A /* GithubOAuthCred.swift */,
-				3952B2951D0C74ED00831D9A /* GithubManager.swift */,
 				3992BB2A1D0BE8A200850D12 /* ProjectsTableViewController.swift */,
-				3973EE691D0BF7F80011C9E3 /* ProjectsManager.swift */,
 				39CB23991D0E6E620058E62B /* CodeEditorViewController.swift */,
-				CE48F9B21D16D4940098A13E /* ChangeTracker.swift */,
-				3952B2991D0C93FF00831D9A /* NSURL+params.swift */,
+				3938B5941D28864600CD7DFA /* Models */,
+				39515FF71D28851800B09A23 /* Github */,
+				39515FF61D2884E400B09A23 /* Utilities */,
 				3992BB2F1D0BE8A200850D12 /* Assets.xcassets */,
 				3992BB311D0BE8A200850D12 /* LaunchScreen.storyboard */,
 				3992BB2C1D0BE8A200850D12 /* Main.storyboard */,
@@ -194,6 +231,7 @@
 				3992BB211D0BE8A200850D12 /* Sources */,
 				3992BB221D0BE8A200850D12 /* Frameworks */,
 				3992BB231D0BE8A200850D12 /* Resources */,
+				3942F55B1D2882DA00F73567 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,6 +266,9 @@
 		3992BB1D1D0BE8A200850D12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					Utilities,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = hypers;
@@ -289,7 +330,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE48F9B31D16D4940098A13E /* ChangeTracker.swift in Sources */,
-				3952B29A1D0C93FF00831D9A /* NSURL+params.swift in Sources */,
 				3952B2961D0C74ED00831D9A /* GithubManager.swift in Sources */,
 				3992BB2B1D0BE8A200850D12 /* ProjectsTableViewController.swift in Sources */,
 				39E77DC51D0BED2D005090A1 /* SXTypeProto.swift in Sources */,
@@ -302,6 +342,7 @@
 				CE7FE3F01D0E3A2300106BB5 /* YSTableViewControllerDelegate.swift in Sources */,
 				39E77DC41D0BED2D005090A1 /* SXSocket.swift in Sources */,
 				39E77DBC1D0BED2D005090A1 /* Enums.swift in Sources */,
+				39515FF51D2884D300B09A23 /* NSURL+params.swift in Sources */,
 				39E77DBE1D0BED2D005090A1 /* SXClient.swift in Sources */,
 				3992BB291D0BE8A200850D12 /* AppDelegate.swift in Sources */,
 				39E77DBD1D0BED2D005090A1 /* Helper.swift in Sources */,
