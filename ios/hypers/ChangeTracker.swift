@@ -125,6 +125,14 @@ struct LineContainer: CustomStringConvertible {
     }
     
     
+    mutating func didChangeText(inRange range: NSRange, with text: String) -> Range<Int> {
+        let affected = affectedLines(inRange: range)
+        let lines = text.components(separatedBy: "\n").map({Line(text: $0)})
+        let linescountOffset = lines.count - (affected.upperBound - affected.lowerBound)
+        self.lines.replaceSubrange(affected, with: lines)
+        return min(affected.lowerBound, affected.upperBound + linescountOffset) ..< max(affected.lowerBound, affected.upperBound + linescountOffset)
+    }
+    
     /// Delete text in range, and update the container
     ///
     /// - parameter range: Range to delete
