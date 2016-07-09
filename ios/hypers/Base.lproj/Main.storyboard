@@ -43,7 +43,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="M94-Ut-Us8"/>
                     <connections>
-                        <outlet property="textView" destination="YAf-fl-Hbo" id="DRK-Lu-19B"/>
+                        <outlet property="textView" destination="YAf-fl-Hbo" id="WJA-Pp-jen"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sza-h5-wHU" userLabel="First Responder" sceneMemberID="firstResponder"/>

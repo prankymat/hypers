@@ -10,6 +10,8 @@ import UIKit
 
 class CodeEditorViewController: UIViewController {
     
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
         self.navigationItem.leftItemsSupplementBackButton = true
