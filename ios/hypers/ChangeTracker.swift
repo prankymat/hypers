@@ -129,7 +129,7 @@ struct LineContainer: CustomStringConvertible {
         let affected = affectedLines(inRange: range)
         let lines = text.components(separatedBy: "\n").map({Line(text: $0)})
         let linescountOffset = lines.count - (affected.upperBound - affected.lowerBound)
-        self.lines.replaceSubrange(affected, with: lines)
+        self.lines.replaceRange(affected, with: lines)
         return min(affected.lowerBound, affected.upperBound + linescountOffset) ..< max(affected.lowerBound, affected.upperBound + linescountOffset)
     }
     
